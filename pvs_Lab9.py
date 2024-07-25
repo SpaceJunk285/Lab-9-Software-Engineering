@@ -1,7 +1,7 @@
 def encode(password):
     encoded = ""
     for i in str(password):
-        encoded += str(int(i) + 1)
+        encoded += str(int(i) + 3)
     return encoded
 
 if __name__ == '__main__':
