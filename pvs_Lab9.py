@@ -6,11 +6,6 @@ def encode(password):
 
 
 def decode(password):
-    decoded = ""
-    for char in password:
-        new_char = str(int(char) - 3)
-        decoded += new_char
-    return decoded
 
 
 if __name__ == '__main__':
