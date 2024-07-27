@@ -4,6 +4,12 @@ def encode(password):
         encoded += str(int(i) + 3)
     return encoded
 
+def decode(password):
+    decoded = ""
+    for char in password:
+        new_char = str((int(char) - 3) % 10)
+        decoded += new_char
+    return decoded
 
 if __name__ == '__main__':
     while True:
