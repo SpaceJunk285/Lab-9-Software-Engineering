@@ -4,14 +4,19 @@ def encode(password):
         encoded += str(int(i) + 3)
     return encoded
 
+
 def decode(password):
     decoded = ""
     for char in password:
-        new_char = str((int(char) - 3) % 10)
+        new_char = str(int(char) - 3)
         decoded += new_char
     return decoded
 
+
 if __name__ == '__main__':
+    password_in = ""
+    encoded_pass = ""
+
     while True:
         print("Menu\n"
               "-------------\n"
@@ -19,18 +24,17 @@ if __name__ == '__main__':
               "2. Decode\n"
               "3. Quit\n")
 
-        option = int(input("Please enter an option:"))
-        password = ""
-        encoded = ""
+        option = int(input("Please enter an option: "))
 
         if option == 1:
-            password = input("Please enter the password to encode:")
-            encoded = encode(password)
-            print("Your password has been encoded and stored!")
+            password_in = input("Please enter the password to encode: ")
+            encoded_pass = encode(password_in)
+            print("Your password has been encoded and stored!\n")
 
         elif option == 2:
-            original_password = decode(encoded)
-            print(f"The encoded password is {encoded}, and the original password is {password}.")
+            original_password = decode(encoded_pass)
+            print(f"The encoded password is {encoded_pass}, and the original password is {original_password}.\n")
+
 
         elif option == 3:
             break
